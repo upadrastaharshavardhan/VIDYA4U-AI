@@ -130,7 +130,7 @@ const Home: NextPage = () => {
           </span>{" "}
           in seconds
         </h1>
-        <p className="text-slate-500 my-5">HI MY DEAR SELF LEARNER THIS AI IS FOR YOU</p>
+        <p className="text-slate-500 my-5">VIDYA4U-AI</p>
         <div className="max-w-xl w-full">
           <div className="flex mt-4 items-center space-x-3 mb-3">
             <span className="w-7 h-7 rounded-full bg-black text-white text-center leading-7">
@@ -186,10 +186,10 @@ const Home: NextPage = () => {
               </button>
             )}
             <a
-              href="https://github.com/upadrastaharshavardhan/VIDYA4U-AI-PRO"
+              href="https://app.brancher.ai/06f87dd0-59d2-4742-9163-82210c2a48ef"
               className="pro-btn  block md:flex-1 border border-transparent rounded-xl font-medium px-4 py-2 w-full"
             >
-              Get Pro version soon&rarr;
+              Get Pro version &rarr;
             </a>
           </div>
         </div>
@@ -217,7 +217,7 @@ const Home: NextPage = () => {
                     >
                       <p>{generatedDescs}</p>
                       <blockquote className="mt-4 text-sm border-l-4 border-slate-300 pl-3 text-slate-400">
-                        VIDYA4U
+                        VIDYA4U-AI
                       </blockquote>
                     </div>
                   </div>
@@ -229,15 +229,15 @@ const Home: NextPage = () => {
         {error && (
           <p className="text-gray-400 my-5">
             🚨 Server is busy, please try again later, or you can
-            <a href="https://github.com/upadrastaharshavardhan/VIDYA4U-AI-PRO" className=" underline hover:text-black ml-1">
-              Get Pro version SOON
+            <a href="https://app.brancher.ai/06f87dd0-59d2-4742-9163-82210c2a48ef" className=" underline hover:text-black ml-1">
+              Get Pro version
             </a>
             .
           </p>
         )}
         <div className="mt-2 flex gap-2">
           <a
-            href="https://discord.gg/baGvNpRujT"
+            href=""
             target="_blank"
             className="inline-flex items-center px-5 py-2.5 text-center text-sm font-medium text-[#747DF8] hover:opacity-80"
           >
@@ -254,7 +254,7 @@ const Home: NextPage = () => {
             Join Discord
           </a>
           <a
-            href="https://twitter.com/intent/tweet/?text=Teach%20Anything&url=https%3A%2F%2Fwww.teach-anything.com"
+            href=""
             target="_blank"
             className="text-[#1da1f2] font-medium text-sm px-5 py-2.5 text-center inline-flex items-center hover:opacity-80"
           >
@@ -268,7 +268,54 @@ const Home: NextPage = () => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
             >
-             
+              <path
+                fill="currentColor"
+                d="M459.4 151.7c.325 4.548 .325 9.097 .325 13.65 0 138.7-105.6 298.6-298.6 298.6-59.45 0-114.7-17.22-161.1-47.11 8.447 .974 16.57 1.299 25.34 1.299 49.06 0 94.21-16.57 130.3-44.83-46.13-.975-84.79-31.19-98.11-72.77 6.498 .974 12.99 1.624 19.82 1.624 9.421 0 18.84-1.3 27.61-3.573-48.08-9.747-84.14-51.98-84.14-102.1v-1.299c13.97 7.797 30.21 12.67 47.43 13.32-28.26-18.84-46.78-51.01-46.78-87.39 0-19.49 5.197-37.36 14.29-52.95 51.65 63.67 129.3 105.3 216.4 109.8-1.624-7.797-2.599-15.92-2.599-24.04 0-57.83 46.78-104.9 104.9-104.9 30.21 0 57.5 12.67 76.67 33.14 23.72-4.548 46.46-13.32 66.6-25.34-7.798 24.37-24.37 44.83-46.13 57.83 21.12-2.273 41.58-8.122 60.43-16.24-14.29 20.79-32.16 39.31-52.63 54.25z"
+              ></path>
+            </svg>
+            Share on Twitter
+          </a>
+        </div>
+        <div className="my-5 max-w-xl w-full">
+          <h2 className=" text-slate-400 mb-4">Our Products</h2>
+          <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+            <li>
+              <a
+                href="https://github.com/upadrastaharshavardhan/VIDYA4U"
+                className="flex px-2 items-center justify-center h-14 hover:bg-slate-50 rounded-lg hover:transition-all"
+              >
+                <img
+                  className="h-6 object-contain"
+                  src="/vidya4u.png"
+                  alt="VIDYA4U FOR SELF LEARNERS"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/upadrastaharshavardhan/Vidya4u-job_gateway"
+                className="flex px-2 items-center justify-center h-14 hover:bg-slate-50 rounded-lg hover:transition-all"
+              >
+                <img
+                  className="h-6 object-contain"
+                  src="/VIDYA4UJOBS.png"
+                  alt="Vidya4u-job_gateway"
+                />
+              </a>
+            </li>
+         
+           
+
+           
+          </ul>
+        </div>
+      </main>
+      <Footer />
+      <a
+        href="https://discord.gg/harshaupadrasta9733"
+        target="_blank"
+        className="fixed right-4 bottom-4 flex h-12 w-12 items-center justify-center rounded-full bg-black text-white hover:bg-gray-600"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
