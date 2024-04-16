@@ -100,7 +100,7 @@ const Home: NextPage = () => {
   return (
     <div className="flex max-w-5xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
       <Head>
-        <title>Teach Anything</title>
+        <title>VIDYA4U-AI</title>
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -286,8 +286,8 @@ const Home: NextPage = () => {
               >
                 <img
                   className="h-6 object-contain"
-                  src="/vidya4u.png"
-                  alt="VIDYA4U FOR SELF LEARNERS"
+                  src="/favicon-32x32.png"
+                  alt="VIDYA4U"
                 />
               </a>
             </li>
@@ -298,7 +298,7 @@ const Home: NextPage = () => {
               >
                 <img
                   className="h-6 object-contain"
-                  src="/VIDYA4UJOBS.png"
+                  src="/magickimg.png"
                   alt="Vidya4u-job_gateway"
                 />
               </a>
