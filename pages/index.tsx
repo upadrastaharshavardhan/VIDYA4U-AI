@@ -48,17 +48,17 @@ const Home: NextPage = () => {
     let prompt;
     if (difficultyObj[difficulty] == "Easy") {
       prompt = `Pretend you are GPT-4 model. Explain ${text}${
-        text.slice(-1) === "." ? "" : "."
+        text.slice(-1) === "." ? "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" : "."
       } to a 6nd grader in ${promptObj[lang]} with a simple example.`;
     } else {
       prompt = `Pretend you are GPT-4 model. Explain ${text}${
-        text.slice(-1) === "." ? "" : "."
+        text.slice(-1) === "." ? "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" : "."
       } in ${
         promptObj[lang]
       }  in technical terms, divided into two paragraphs, principles and applications. Output format, Principle:, Application.`;
     }
     e.preventDefault();
-    setGeneratedDescs("");
+    setGeneratedDescs("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");
     setLoading(true);
     const response = await fetch("/api/generate", {
       method: "POST",
