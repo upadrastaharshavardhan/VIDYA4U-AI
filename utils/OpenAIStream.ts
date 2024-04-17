@@ -3,11 +3,14 @@ import {
   ParsedEvent,
   ReconnectInterval,
 } from "eventsource-parser";
+
 export type ChatGPTAgent = "user" | "system";
+
 export interface ChatGPTMessage {
   role: ChatGPTAgent;
   content: string;
 }
+
 export interface OpenAIStreamPayload {
   model: string;
   messages: ChatGPTMessage[];
@@ -19,14 +22,15 @@ export interface OpenAIStreamPayload {
   stream: boolean;
   n: number;
 }
-export async function OpenAIStream(payload: OpenAIStreamPayload) {
+
+export async function OpenAIStream(payload: OpenAIStreamPayload, apiKey: string) {
   const encoder = new TextEncoder();
   const decoder = new TextDecoder();
   let counter = 0;
   const res = await fetch(`https://${process.env.OPENAI_BASE_URL ?? ""}/v1/chat/completions`, {
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.OPENAI_API_KEY ?? ""}`,
+      Authorization: `Bearer ${apiKey}`,
     },
     method: "POST",
     body: JSON.stringify(payload),
