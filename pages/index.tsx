@@ -20,7 +20,7 @@ const Home: NextPage = () => {
   const [lang, setLang] = useState<VibeType>("English");
   const [difficulty, setDifficulty] = useState<VibeType2>("Easy");
   const [generatedDescs, setGeneratedDescs] = useState<string>("");
-  const defultDesc = "How to explain relativity?";
+  const defaultDesc = "How to explain relativity?";
 
   console.log("Streamed response: ", { generatedDescs });
   const promptObj = {
@@ -42,11 +42,11 @@ const Home: NextPage = () => {
     "Easy": "Easy",
     "Professional": "Professional",
   };
-  const text = desc || defultDesc;
+  const text = desc || defaultDesc;
 
   const generateDesc = async (e: any) => {
     let prompt;
-    if (difficultyObj[difficulty] == "Easy") {
+    if (difficultyObj[difficulty] === "Easy") {
       prompt = `Pretend you are GPT-4 model. Explain ${text}${
         text.slice(-1) === "." ? "" : "."
       } to a 6nd grader in ${promptObj[lang]} with a simple example.`;
@@ -143,7 +143,7 @@ const Home: NextPage = () => {
             onChange={(e) => setDesc(e.target.value)}
             rows={4}
             className="w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black block"
-            placeholder={"e.g. " + defultDesc}
+            placeholder={"e.g. " + defaultDesc}
           />
           <div className="flex my-4 items-center space-x-3">
             <span className="w-7 h-7 rounded-full bg-black text-white text-center leading-7">
@@ -293,45 +293,47 @@ const Home: NextPage = () => {
             </li>
             <li>
               <a
-                href="https://github.com/upadrastaharshavardhan/Vidya4u-job_gateway"
+                href="https://github.com/upadrastaharshavardhan/VIDYA4U-Next.js-TailwindCSS-Auth0-Stripe"
                 className="flex px-2 items-center justify-center h-14 hover:bg-slate-50 rounded-lg hover:transition-all"
               >
                 <img
                   className="h-6 object-contain"
-                  src="/magickimg.png"
-                  alt="Vidya4u-job_gateway"
+                  src="/favicon-32x32.png"
+                  alt="VIDYA4U-Next.js-TailwindCSS-Auth0-Stripe"
                 />
               </a>
             </li>
-         
-           
-
-           
+            <li>
+              <a
+                href="https://github.com/upadrastaharshavardhan/VIDYA4U-Client-Android"
+                className="flex px-2 items-center justify-center h-14 hover:bg-slate-50 rounded-lg hover:transition-all"
+              >
+                <img
+                  className="h-6 object-contain"
+                  src="/favicon-32x32.png"
+                  alt="VIDYA4U-Client-Android"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/upadrastaharshavardhan/VIDYA4U-Client-Web"
+                className="flex px-2 items-center justify-center h-14 hover:bg-slate-50 rounded-lg hover:transition-all"
+              >
+                <img
+                  className="h-6 object-contain"
+                  src="/favicon-32x32.png"
+                  alt="VIDYA4U-Client-Web"
+                />
+              </a>
+            </li>
           </ul>
         </div>
+        <Github />
       </main>
       <Footer />
-      <a
-        href="https://discord.gg/harshaupadrasta9733"
-        target="_blank"
-        className="fixed right-4 bottom-4 flex h-12 w-12 items-center justify-center rounded-full bg-black text-white hover:bg-gray-600"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          className="h-6 w-6"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M10 3c-4.31 0-8 3.033-8 7 0 2.024.978 3.825 2.499 5.085a3.478 3.478 0 01-.522 1.756.75.75 0 00.584 1.143 5.976 5.976 0 003.936-1.108c.487.082.99.124 1.503.124 4.31 0 8-3.033 8-7s-3.69-7-8-7zm0 8a1 1 0 100-2 1 1 0 000 2zm-2-1a1 1 0 11-2 0 1 1 0 012 0zm5 1a1 1 0 100-2 1 1 0 000 2z"
-            clip-rule="evenodd"
-          />
-        </svg>
-      </a>
     </div>
   );
 };
 
 export default Home;
-
