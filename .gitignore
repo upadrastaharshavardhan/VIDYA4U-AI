@@ -34,8 +34,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-.env
-process.env.OPENAI_API_KEY
+*.env
+*.process.env.OPENAI_API_KEY
 .env.example
 
 # idea
