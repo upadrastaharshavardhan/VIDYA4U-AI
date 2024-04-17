@@ -23,10 +23,10 @@ export async function OpenAIStream(payload: OpenAIStreamPayload) {
   const encoder = new TextEncoder();
   const decoder = new TextDecoder();
   let counter = 0;
-  const res = await fetch(`https://${process.env.OPENAI_BASE_URL ?? "api.openai.com"}/v1/chat/completions`, {
+  const res = await fetch(`https://${process.env.OPENAI_BASE_URL ?? ""}/v1/chat/completions`, {
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.OPENAI_API_KEY ?? "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"}`,
+      Authorization: `Bearer ${process.env.OPENAI_API_KEY ?? ""}`,
     },
     method: "POST",
     body: JSON.stringify(payload),
