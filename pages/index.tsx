@@ -12,7 +12,6 @@ import Github from "../components/GitHub";
 import LoadingDots from "../components/LoadingDots";
 import ResizablePanel from "../components/ResizablePanel";
 import Script from "next/script";
-
 const Home: NextPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -21,7 +20,6 @@ const Home: NextPage = () => {
   const [difficulty, setDifficulty] = useState<VibeType2>("Easy");
   const [generatedDescs, setGeneratedDescs] = useState<string>("");
   const defultDesc = "How to explain relativity?";
-
   console.log("Streamed response: ", { generatedDescs });
   const promptObj = {
     "English": "UK English",
@@ -43,7 +41,6 @@ const Home: NextPage = () => {
     "Professional": "Professional",
   };
   const text = desc || defultDesc;
-
   const generateDesc = async (e: any) => {
     let prompt;
     if (difficultyObj[difficulty] == "Easy") {
@@ -70,37 +67,31 @@ const Home: NextPage = () => {
       }),
     });
     console.log("Edge function returned.");
-
     if (!response.ok) {
       setError(true);
       setLoading(false);
       throw new Error(response.statusText);
     }
-
     // This data is a ReadableStream
     const data = response.body;
     if (!data) {
       return;
     }
-
     const reader = data.getReader();
     const decoder = new TextDecoder();
     let done = false;
-
     while (!done) {
       const { value, done: doneReading } = await reader.read();
       done = doneReading;
       const chunkValue = decoder.decode(value);
       setGeneratedDescs((prev) => prev + chunkValue);
     }
-
     setLoading(false);
   };
-
   return (
     <div className="flex max-w-5xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
       <Head>
-        <title>Teach Anything</title>
+        <title>VIDYA4U-AI</title>
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -115,13 +106,10 @@ const Home: NextPage = () => {
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
-
           gtag('config', 'G-6000PLHFK1');
         `}
       </Script>
-
       <Header />
-
       <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-2 sm:my-16">
         <h1 className="sm:text-4xl text-2xl max-w-1xl font-bold text-slate-900">
           Teach you{" "}
@@ -154,7 +142,6 @@ const Home: NextPage = () => {
           <div className="block">
             <DropDown vibe={lang} setVibe={(newLang) => setLang(newLang)} />
           </div>
-
           <div className="flex my-4 items-center space-x-3">
             <span className="w-7 h-7 rounded-full bg-black text-white text-center leading-7">
               3
@@ -167,7 +154,6 @@ const Home: NextPage = () => {
               setVibe2={(newDifficulty) => setDifficulty(newDifficulty)}
             />
           </div>
-
           <div className="md:flex sm:mt-6 mt-4 space-y-4 md:space-y-0 gap-4">
             {!loading && (
               <button
@@ -286,8 +272,8 @@ const Home: NextPage = () => {
               >
                 <img
                   className="h-6 object-contain"
-                  src="/vidya4u.png"
-                  alt="VIDYA4U FOR SELF LEARNERS"
+                  src="/favicon-32x32.png"
+                  alt="VIDYA4U"
                 />
               </a>
             </li>
@@ -298,14 +284,13 @@ const Home: NextPage = () => {
               >
                 <img
                   className="h-6 object-contain"
-                  src="/VIDYA4UJOBS.png"
+                  src="/magickimg.png"
                   alt="Vidya4u-job_gateway"
                 />
               </a>
             </li>
          
            
-
            
           </ul>
         </div>
@@ -332,6 +317,4 @@ const Home: NextPage = () => {
     </div>
   );
 };
-
 export default Home;
-
