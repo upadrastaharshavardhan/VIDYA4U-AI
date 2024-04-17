@@ -1,4 +1,4 @@
-import { NextRequest, Response } from "next";
+import type { NextRequest } from "next/server";
 import { OpenAIStream, OpenAIStreamPayload } from "../../utils/OpenAIStream";
 
 if (!process.env.OPENAI_API_KEY) {
