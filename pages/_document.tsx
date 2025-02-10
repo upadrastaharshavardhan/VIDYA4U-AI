@@ -19,7 +19,7 @@ class MyDocument extends Document {
           
           <Script
              id="Adsense-id"
-             data-ad-client="ca-pub-9181833886721130"
+             data-ad-client=""//add adsence id here
              strategy="beforeInteractive"
              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
           />
