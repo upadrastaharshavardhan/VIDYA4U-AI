@@ -15,7 +15,7 @@ export default function Header() {
           
            <a
             className="flex max-w-fit items-center justify-center space-x-2 rounded-md bg-white text-sm text-gray-600 shadow-sm transition-colors hover:opacity-80"
-            href="https://www.buymeacoffee.com/lvwzhen"
+            href=""
             target="_blank"
             rel="noopener noreferrer"
           >
