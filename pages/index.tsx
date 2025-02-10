@@ -42,34 +42,64 @@ const Home: NextPage = () => {
     Professional: "Professional",
   };
 
+
   const generateDesc = async (e: any) => {
-    e.preventDefault();
-    setLoading(true);
-    setGeneratedDescs("");
+  e.preventDefault();
+  setLoading(true);
+  setGeneratedDescs("");
 
-    let prompt = difficultyObj[difficulty] === "Easy"
-      ? `Explain ${text} to a 6-year-old in ${promptObj[lang]} with a simple example.`
-      : `Explain ${text} in ${promptObj[lang]} using technical terms.`;
+  let prompt = `Explain ${text} in simple terms.`;
 
-    try {
-      const response = await fetch("/api/generate", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt }),
-      });
+  try {
+    const response = await fetch("/api/generate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ prompt }),
+    });
 
-      if (!response.ok) {
-        throw new Error(`API Error: ${response.status}`);
-      }
-
-      const data = await response.json();
-      setGeneratedDescs(data.choices?.[0]?.message?.content || "No response.");
-    } catch (error) {
-      toast.error("Error fetching response. Try again.");
-    } finally {
-      setLoading(false);
+    if (!response.ok) {
+      throw new Error(`API Error: ${response.status}`);
     }
-  };
+
+    const data = await response.json();
+    setGeneratedDescs(data.text);
+  } catch (error) {
+    toast.error("Error fetching response. Try again.");
+  } finally {
+    setLoading(false);
+  }
+};
+
+
+  
+//   const generateDesc = async (e: any) => {
+//     e.preventDefault();
+//     setLoading(true);
+//     setGeneratedDescs("");
+
+//     let prompt = difficultyObj[difficulty] === "Easy"
+//       ? `Explain ${text} to a 6-year-old in ${promptObj[lang]} with a simple example.`
+//       : `Explain ${text} in ${promptObj[lang]} using technical terms.`;
+
+//     try {
+//       const response = await fetch("/api/generate", {
+//         method: "POST",
+//         headers: { "Content-Type": "application/json" },
+//         body: JSON.stringify({ prompt }),
+//       });
+
+//       if (!response.ok) {
+//         throw new Error(`API Error: ${response.status}`);
+//       }
+
+//       const data = await response.json();
+//       setGeneratedDescs(data.choices?.[0]?.message?.content || "No response.");
+//     } catch (error) {
+//       toast.error("Error fetching response. Try again.");
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
